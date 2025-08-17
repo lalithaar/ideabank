@@ -36,6 +36,8 @@ All I ask in exchange is:
 
 That’s it. Go make cool things. :>
 
+I know some of these ideas are valuable. I know they could blow up, or be well funded. I know it may sound stupid to share but I dont care, to anyone who wants this idea - take it, just make sure to take good rest, be gentle and kind with yourself, sleep and eat well. You dont have to attribute me. If it succeeds, whether in funding, business or just in making you kinder, I am happy with that. I have someone I love with all of me and want to give all of my time to. Love the journey of building, while I love the journey of loving him 
+- His <33
 
 *Ya Devi Sarva Bhuteshu Buddhi Roopena Samsthita, Namasthasyai Namo Namah*
 
