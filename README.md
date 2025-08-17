@@ -9,6 +9,11 @@ some are just ideas, some have fleshed out concepts - as I said, it's a sratchbo
 A social reading style app where user's can access their local files and choose to add a friend - they can see each other's comments on the books, reactions etc
 - Make sure to checkout the legal aspect, and most probably make sure it says the responsiblity of the book's license / bought is on the user, aka it assumes they have legal rights
 - ^^ Maybe, make it like the friend must have a local copy too, on the app's end - it's just maintaining state of progress of reading, comments etc from all the shared parties
+
+## email newsletter but within your friendcircle alone
+What if you could create a newsletter but it's only shared within friends? snippets of what happened since previous letter or yada yada - [Letter Loop](https://www.letterloop.co/) is built off that idea but it's paid - I always thought it is a cool thing to replicate locally within the friend circle over a weekend, you don't have to ship it - maybe just built it for local use
+
+check out the folder for more info - /letterloop
 ## anyone burnt out with tech shipping? check this out
 #not an idea
 Neocities - they describe themselves as "Neocities is a social network of 1,231,300 web sites that are bringing back the lost individual creativity of the web" 
