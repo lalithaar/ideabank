@@ -12,5 +12,11 @@ A social reading style app where user's can access their local files and choose 
 ## 
 ## 
 # who can implement this or use the ideas here?
-It is a bank, so inexchange of the ideas, please be kind to yourself more :> Take good rest, that's all I ask of you.
-You don't have to attribute me or anything, unless you wish to
+This is an idea bank — a scratchbook of concepts, half-formed thoughts, and hopeful seeds.
+You’re welcome to take anything here and run with it, remix it, or ignore it completely.
+All I ask in exchange is:
+✧ Please be kind to yourself.
+✧ Take good rest.
+✧ You don’t have to attribute me (unless you want to).
+
+That’s it. Go make cool things. :>
