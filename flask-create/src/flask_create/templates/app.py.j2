@@ -1,0 +1,43 @@
+from flask import Flask, render_template{% if database %}, jsonify{% endif %}
+{% if sample_routes %}from routes.sample import sample_bp{% endif %}
+{% if database %}from models import db{% endif %}
+
+def create_app():
+    app = Flask(__name__)
+    
+    {% if database %}
+    # Database configuration
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{{ project_name }}.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
+    # Initialize database
+    db.init_app(app)
+    
+    with app.app_context():
+        db.create_all()
+    {% endif %}
+    
+    {% if sample_routes %}
+    # Register blueprints
+    app.register_blueprint(sample_bp, url_prefix='/api')
+    {% endif %}
+    
+    @app.route('/')
+    def home():
+        return render_template('index.html', 
+                             project_name="{{ project_name }}",
+                             {% if database %}database_status="connected"{% else %}database_status="not configured"{% endif %})
+    
+    @app.route('/api')
+    def api_info():
+        return jsonify({
+            "message": "🚀 {{ project_name }} API",
+            "status": "running",
+            {% if database %}"database": "connected"{% else %}"database": "not configured"{% endif %}
+        })
+    
+    return app
+
+if __name__ == '__main__':
+    app = create_app()
+    app.run(debug=True)

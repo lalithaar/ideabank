@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project_name }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .status {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .status-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .status-emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .links {
+            margin-top: 2rem;
+        }
+        
+        .link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            margin-top: 2rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .status {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🚀</div>
+        <h1>{{ project_name }}</h1>
+        <p class="subtitle">Your Flask project is up and running!</p>
+        
+        <div class="status">
+            <div class="status-item">
+                <span class="status-emoji">⚡</span>
+                <strong>Flask</strong><br>
+                Ready
+            </div>
+            <div class="status-item">
+                <span class="status-emoji">{% if database_status == 'connected' %}🗃️{% else %}📦{% endif %}</span>
+                <strong>Database</strong><br>
+                {% if database_status == 'connected' %}Connected{% else %}Not configured{% endif %}
+            </div>
+            {% if sample_routes %}
+            <div class="status-item">
+                <span class="status-emoji">🛤️</span>
+                <strong>Routes</strong><br>
+                Ready
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="links">
+            <a href="/api" class="link">📡 API Info</a>
+            {% if sample_routes %}
+            <a href="/api/health" class="link">💚 Health Check</a>
+            {% if database_status == 'connected' %}
+            <a href="/api/users" class="link">👥 Users API</a>
+            {% endif %}
+            {% endif %}
+        </div>
+        
+        <div class="footer">
+            <p>Created with ❤️ using <strong>flask-create</strong></p>
+            <p>Edit <code>templates/index.html</code> to customize this page</p>
+        </div>
+    </div>
+</body>
+</html>

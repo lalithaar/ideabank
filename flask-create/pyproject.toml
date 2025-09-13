@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flask-create"
+version = "0.0.1"
+description = "🚀 Create Flask projects with style"
+authors = [{name = "Lalitha A R", email = "arlalithablogs@gmail.com"}]
+license = {text = "GPL v3"}
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "typer[all]>=0.9.0",
+    "rich>=13.0.0",
+    "jinja2>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/lalithaar/flask-create"
+Repository = "https://github.com/lalithaar/flask-create"
+Issues = "https://github.com/lalithaar/flask-create/issues"
+
+[project.scripts]
+flask-create = "flask_create.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["flask_create*"]
+
+[tool.setuptools.package-data]
+flask_create = ["templates/**/*"]

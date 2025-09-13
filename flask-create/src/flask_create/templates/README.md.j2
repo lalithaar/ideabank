@@ -1,0 +1,64 @@
+# {{ project_name }}
+
+🚀 A Flask application created with flask-create
+
+## Quick Start
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+{% if database %}# Initialize database (if needed)
+flask shell
+>>> from models import db
+>>> db.create_all()
+>>> exit()
+
+{% endif %}# Run the application
+flask run
+```
+
+Your app will be available at `http://localhost:5000`
+
+## Project Structure
+
+```
+{{ project_name }}/
+├── app.py              # Main Flask application
+{% if database %}├── models.py           # Database models{% endif %}
+├── templates/          # Jinja2 templates
+│   └── index.html      # Landing page
+{% if sample_routes %}├── routes/             # API route blueprints
+│   └── sample.py       # Example routes{% endif %}
+├── requirements.txt    # Python dependencies
+└── README.md          # This file
+```
+
+## Features
+
+- 🎨 Beautiful landing page at `/`
+- 📡 JSON API endpoints at `/api/*`
+{% if database %}- 🗃️ SQLite database with SQLAlchemy{% endif %}
+{% if sample_routes %}- 🛤️ Sample API routes ready to use{% endif %}
+- 📱 Responsive design
+- ⚡ Flask development server
+
+## API Endpoints
+
+- `GET /` - Landing page
+- `GET /api` - API information
+{% if sample_routes %}- `GET /api/health` - Health check
+{% if database %}- `GET /api/users` - Get all users
+- `POST /api/users` - Create a new user{% endif %}{% endif %}
+
+## Next Steps
+
+1. Customize `templates/index.html` for your branding
+2. {% if database %}Add more models to `models.py`{% else %}Set up a database with `flask-create` next time!{% endif %}
+3. {% if sample_routes %}Expand the sample routes in `routes/sample.py`{% else %}Add some routes to get started{% endif %}
+4. Add authentication (JWT coming in flask-create v0.1.0!)
+5. Deploy to production
+
+---
+
+Created with ❤️ using [flask-create](https://github.com/lalithaar/flask-create)

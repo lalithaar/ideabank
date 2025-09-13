@@ -1,0 +1,2 @@
+[console_scripts]
+flask-create = flask_create.cli:app

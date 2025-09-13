@@ -1,0 +1,39 @@
+from flask import Blueprint, request, jsonify{% if database %}
+from models import db, User{% endif %}
+
+sample_bp = Blueprint('sample', __name__)
+
+@sample_bp.route('/health')
+def health_check():
+    return jsonify({
+        "status": "healthy",
+        "service": "{{ project_name }}",
+        "version": "1.0.0"
+    })
+
+{% if database %}
+@sample_bp.route('/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return jsonify([user.to_dict() for user in users])
+
+@sample_bp.route('/users', methods=['POST'])
+def create_user():
+    data = request.get_json()
+    
+    if not data or 'username' not in data or 'email' not in data:
+        return jsonify({"error": "Username and email are required"}), 400
+    
+    user = User(username=data['username'], email=data['email'])
+    db.session.add(user)
+    db.session.commit()
+    
+    return jsonify(user.to_dict()), 201
+{% else %}
+@sample_bp.route('/hello')
+def hello():
+    return jsonify({
+        "message": "Hello from {{ project_name }}!",
+        "tip": "Add database support for more features"
+    })
+{% endif %}

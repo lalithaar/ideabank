@@ -1,1 +1,1 @@
-# pec-hacks-2.0
+there are some useful formulas, stats and notes inside :>
