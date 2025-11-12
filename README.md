@@ -2,6 +2,9 @@
 scratchbook of ideas I thought of, free for anyone to use and implement from
 some are just ideas, some have fleshed out concepts - as I said, it's a sratchbook
 
+This ideas are shared here under the Idea Protocol ([IP-ZERO](https://lalithaar.github.io/idea-protocol/v0.1/ip-zero)). Absolutely free for any use. No credit required.
+
+
 ## Food scanner - Scans the products and gives a health rating
 - remember it's not about being against the companies, it's encouraging them to create healthier products
 - make sure to open source the basis of calculation, not even the exact code but at least the methodology
